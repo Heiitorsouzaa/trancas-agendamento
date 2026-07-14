@@ -6,4 +6,4 @@ SQLAlchemy==2.0.32
 greenlet==3.0.3
 click==8.1.7
 itsdangerous==2.2.0
-blinker==1.8.2s
+blinker==1.8.2
