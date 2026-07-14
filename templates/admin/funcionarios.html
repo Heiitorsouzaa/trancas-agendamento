@@ -1,0 +1,226 @@
+```html
+{% extends "base.html" %}
+
+{% block title %}
+Funcionários
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2>👥 Funcionários</h2>
+
+            <p class="text-muted mb-0">
+                Cadastre e gerencie sua equipe.
+            </p>
+
+        </div>
+
+        <span class="badge bg-dark fs-6">
+            Total: {{ funcionarios|length }}
+        </span>
+
+    </div>
+
+
+
+    <div class="card shadow mb-5">
+
+        <div class="card-header bg-dark text-white">
+
+            Novo Funcionário
+
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Nome
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="nome"
+                        placeholder="Nome da trancista"
+                        required>
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Telefone
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="telefone"
+                        placeholder="(11) 99999-9999">
+
+                </div>
+
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+                        Especialidade
+                    </label>
+
+                    <select
+                        class="form-select"
+                        name="especialidade">
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option>Box Braids</option>
+
+                        <option>Nagô</option>
+
+                        <option>Twist</option>
+
+                        <option>Crochê Braids</option>
+
+                        <option>Fulani Braids</option>
+
+                        <option>Tranças Infantil</option>
+
+                        <option>Mega Hair</option>
+
+                        <option>Outro</option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="btn btn-success">
+
+                    ➕ Cadastrar Funcionário
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="card shadow">
+
+        <div class="card-header bg-dark text-white">
+
+            Funcionários Cadastrados
+
+        </div>
+
+        <div class="card-body">
+
+            {% if funcionarios %}
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Nome</th>
+
+                            <th>Telefone</th>
+
+                            <th>Especialidade</th>
+
+                            <th class="text-center">Ações</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for f in funcionarios %}
+
+                        <tr>
+
+                            <td>{{ f.nome }}</td>
+
+                            <td>{{ f.telefone }}</td>
+
+                            <td>
+
+                                <span class="badge bg-primary">
+
+                                    {{ f.especialidade }}
+
+                                </span>
+
+                            </td>
+
+                            <td class="text-center">
+
+                                <a
+                                    href="/editar-funcionario/{{ f.id }}"
+                                    class="btn btn-warning btn-sm">
+
+                                    ✏️ Editar
+
+                                </a>
+
+                                <a
+                                    href="/excluir-funcionario/{{ f.id }}"
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Deseja excluir este funcionário?')">
+
+                                    🗑️ Excluir
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            {% else %}
+
+            <div class="alert alert-info text-center">
+
+                Nenhum funcionário cadastrado.
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+```

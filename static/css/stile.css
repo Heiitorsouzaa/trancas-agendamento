@@ -1,0 +1,427 @@
+/* ==========================
+   CONFIGURAÇÃO GERAL
+========================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #fff8fb;
+    color: #333;
+}
+
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar {
+    padding: 15px 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.navbar-brand {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+/* ==========================
+   BANNER
+========================== */
+
+.banner {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+
+    background:
+    linear-gradient(
+        rgba(139,58,98,0.75),
+        rgba(139,58,98,0.75)
+    );
+}
+
+
+.banner h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+
+.banner p {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+
+/* ==========================
+   SEÇÕES
+========================== */
+
+section {
+    padding: 80px 0;
+}
+
+
+.titulo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.titulo h2 {
+    color: #8b3a62;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+.titulo p {
+    color: #666;
+}
+
+
+/* ==========================
+   CARDS
+========================== */
+
+.card {
+
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,0.12);
+
+    transition: 0.3s;
+
+}
+
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+
+.servico-card {
+
+    min-height: 250px;
+    text-align: center;
+
+}
+
+
+
+.servico-card h3 {
+
+    color: #8b3a62;
+    font-weight: bold;
+
+}
+
+
+
+.preco {
+
+    margin-top: 20px;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #198754;
+
+}
+
+
+/* ==========================
+   GALERIA
+========================== */
+
+
+.galeria {
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 25px;
+
+}
+
+
+.galeria img {
+
+    width: 100%;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+}
+
+
+/* ==========================
+   DEPOIMENTOS
+========================== */
+
+
+.depoimento {
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+.depoimento h5 {
+
+    color:#8b3a62;
+
+}
+
+
+/* ==========================
+   CONTATO
+========================== */
+
+
+.contato-box {
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+.contato-box a {
+
+    color:#8b3a62;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+
+/* ==========================
+   BOTÕES
+========================== */
+
+
+.btn {
+
+    border-radius:30px;
+
+    padding:12px 25px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* ==========================
+   WHATSAPP
+========================== */
+
+
+.whatsapp {
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    background:#25d366;
+
+    color:white;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    text-decoration:none;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.3);
+
+}
+
+
+
+/* ==========================
+   FOOTER
+========================== */
+
+
+footer {
+
+    background:#212529;
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    margin-top:80px;
+
+}
+
+
+
+footer p {
+
+    margin:10px;
+
+}
+
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+
+@media(max-width:768px){
+
+
+.banner h1 {
+
+    font-size:32px;
+
+}
+
+
+.banner p {
+
+    font-size:17px;
+
+}
+
+
+section {
+
+    padding:50px 15px;
+
+}
+
+
+}
+
+/* ==========================
+   MAIS ESPAÇAMENTO NO SITE
+========================== */
+
+
+section {
+    padding-top: 120px !important;
+    padding-bottom: 120px !important;
+}
+
+
+/* Espaço entre título e conteúdo */
+
+.titulo {
+    margin-bottom: 80px !important;
+}
+
+
+/* Parágrafos mais afastados */
+
+p {
+    margin-bottom: 30px;
+    line-height: 2;
+}
+
+
+/* Espaço entre cards */
+
+.row {
+    row-gap: 50px !important;
+}
+
+
+.card {
+    margin-bottom: 50px;
+    padding: 30px;
+}
+
+
+/* Banner maior */
+
+.banner {
+    min-height: 650px;
+    padding: 180px 20px !important;
+}
+
+
+/* Galeria */
+
+.galeria {
+    gap: 40px;
+}
+
+
+/* Depoimentos */
+
+.depoimento {
+    padding: 40px;
+}
+
+
+/* Contato */
+
+.contato-box {
+    padding: 40px;
+}
+
+
+/* Rodapé */
+
+footer {
+    margin-top: 120px;
+    padding: 60px 20px;
+}

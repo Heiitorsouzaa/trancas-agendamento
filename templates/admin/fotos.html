@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<div class="container mt-5">
+
+
+<h1>
+📸 Galeria
+</h1>
+
+
+
+<div class="card shadow p-4 mt-4">
+
+
+<form method="POST"
+enctype="multipart/form-data">
+
+
+<input
+
+type="file"
+
+name="imagem"
+
+class="form-control mb-3"
+
+required>
+
+
+<button class="btn btn-success">
+
+Enviar foto
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+
+
+
+<div class="row mt-5">
+
+
+{% for foto in fotos %}
+
+
+<div class="col-md-4 mb-4">
+
+
+<div class="card shadow">
+
+
+<img
+
+src="/static/uploads/{{foto.imagem}}"
+
+class="img-fluid rounded">
+
+
+</div>
+
+
+</div>
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+
+</div>
+
+
+{% endblock %}

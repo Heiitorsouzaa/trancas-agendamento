@@ -1,0 +1,822 @@
+{% extends "base.html" %}
+
+{% block title %}
+Bruna Trancista - Salão de Tranças
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- BANNER PRINCIPAL -->
+
+<section class="banner">
+
+<div class="container">
+
+<h1>
+Tranças que valorizam sua beleza
+</h1>
+
+
+<p>
+Especialistas em tranças modernas, box braids, nagô e estilos personalizados.
+</p>
+
+
+<a href="{{ url_for('agendamento') }}" class="btn btn-warning btn-lg">
+    Agendar Horário
+</a>
+
+</div>
+
+</section>
+
+
+
+
+<!-- SOBRE -->
+
+<section>
+
+<div class="container">
+
+
+<div class="titulo">
+
+<h2>
+Sobre o Salão
+</h2>
+
+
+<p>
+Conheça nosso trabalho e nossa paixão por transformar estilos.
+</p>
+
+</div>
+
+
+
+<div class="row align-items-center">
+
+
+<div class="col-md-6">
+
+
+<h3>
+Beleza, cuidado e qualidade
+</h3>
+
+
+<p>
+
+Nosso salão é especializado em tranças
+africanas e estilos modernos.
+
+Trabalhamos com técnicas profissionais,
+atendimento personalizado e muito cuidado
+com cada cliente.
+
+</p>
+
+
+<p>
+
+Nosso objetivo é entregar um resultado
+bonito, confortável e duradouro.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="col-md-6">
+
+<div class="card">
+
+<div class="card-body text-center">
+
+
+<h1>
+✨
+</h1>
+
+
+<h4>
+Profissionais especializados
+</h4>
+
+
+<p>
+Experiência e dedicação em cada detalhe.
+</p>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- SERVIÇOS -->
+
+<section class="bg-light">
+
+
+<div class="container">
+
+
+<div class="titulo">
+
+<h2>
+Nossos Serviços
+</h2>
+
+<p>
+Escolha o estilo perfeito para você.
+</p>
+
+</div>
+
+
+
+<div class="row g-4">
+
+
+<div class="col-md-4">
+
+
+<div class="card servico-card">
+
+
+<div class="card-body">
+
+
+<h3>
+Box Braids
+</h3>
+
+
+<p>
+
+Tranças box modernas e resistentes.
+
+</p>
+
+
+<div class="preco">
+
+R$ 180
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="col-md-4">
+
+
+<div class="card servico-card">
+
+
+<div class="card-body">
+
+
+<h3>
+Nagô
+</h3>
+
+
+<p>
+
+Tranças nagô profissionais.
+
+</p>
+
+
+<div class="preco">
+
+R$ 120
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="col-md-4">
+
+
+<div class="card servico-card">
+
+
+<div class="card-body">
+
+
+<h3>
+Tranças Personalizadas
+</h3>
+
+
+<p>
+
+Crie seu próprio estilo.
+
+</p>
+
+
+<div class="preco">
+
+R$ 250
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+<!-- GALERIA -->
+
+<section>
+
+<div class="container">
+
+
+<div class="titulo">
+
+<h2>
+Galeria
+</h2>
+
+<p>
+Confira alguns dos nossos trabalhos.
+</p>
+
+</div>
+
+
+
+<div class="galeria">
+
+
+{% if fotos %}
+
+{% for foto in fotos %}
+
+
+<img 
+src="{{ url_for('static', filename='uploads/' + foto.imagem) }}"
+alt="{{ foto.nome }}">
+
+
+{% endfor %}
+
+
+{% else %}
+
+
+<div class="card">
+
+<div class="card-body text-center">
+
+<h4>
+Fotos em breve
+</h4>
+
+<p>
+Nossa galeria será atualizada em breve.
+</p>
+
+</div>
+
+</div>
+
+
+{% endif %}
+
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- DEPOIMENTOS -->
+
+<section class="bg-light">
+
+
+<div class="container">
+
+
+<div class="titulo">
+
+<h2>
+Depoimentos
+</h2>
+
+<p>
+O que nossas clientes dizem.
+</p>
+
+</div>
+
+
+
+<div class="row g-4">
+
+
+<div class="col-md-4">
+
+
+<div class="depoimento">
+
+
+<p>
+
+"Atendimento maravilhoso!
+Minha trança ficou perfeita."
+
+</p>
+
+
+<h5>
+⭐ jaqueline
+</h5>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="col-md-4">
+
+
+<div class="depoimento">
+
+
+<p>
+
+"Profissional muito cuidadosa.
+Com certeza voltarei."
+
+</p>
+
+
+<h5>
+⭐ debora
+</h5>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="col-md-4">
+
+
+<div class="depoimento">
+
+
+<p>
+
+"Melhor profissional de tranças.
+Resultado incrível."
+
+</p>
+
+
+<h5>
+⭐ ana
+</h5>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- FAQ -->
+
+<section>
+
+
+<div class="container">
+
+
+<div class="titulo">
+
+<h2>
+Perguntas Frequentes
+</h2>
+
+</div>
+
+
+
+<div class="accordion" id="faq">
+
+
+
+<div class="accordion-item">
+
+
+<h2 class="accordion-header">
+
+
+<button 
+class="accordion-button"
+data-bs-toggle="collapse"
+data-bs-target="#pergunta1">
+
+Quanto tempo dura uma trança?
+
+</button>
+
+
+</h2>
+
+
+
+<div 
+id="pergunta1"
+class="accordion-collapse collapse show">
+
+
+<div class="accordion-body">
+
+A duração depende do cuidado, podendo durar várias semanas.
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="accordion-item">
+
+
+<h2 class="accordion-header">
+
+
+<button 
+class="accordion-button collapsed"
+data-bs-toggle="collapse"
+data-bs-target="#pergunta2">
+
+Preciso marcar horário?
+
+</button>
+
+
+</h2>
+
+
+
+<div 
+id="pergunta2"
+class="accordion-collapse collapse">
+
+
+<div class="accordion-body">
+
+Sim. O agendamento garante seu horário reservado.
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="accordion-item">
+
+
+<h2 class="accordion-header">
+
+
+<button 
+class="accordion-button collapsed"
+data-bs-toggle="collapse"
+data-bs-target="#pergunta3">
+
+Quais formas de pagamento?
+
+</button>
+
+
+</h2>
+
+
+
+<div 
+id="pergunta3"
+class="accordion-collapse collapse">
+
+
+<div class="accordion-body">
+
+Aceitamos Pix, cartão e dinheiro.
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+<!-- CONTATO -->
+
+<section>
+
+
+<div class="container">
+
+
+<div class="titulo">
+
+<h2>
+Entre em contato
+</h2>
+
+<p>
+Agende seu horário ou fale conosco.
+</p>
+
+</div>
+
+
+
+<div class="row g-4">
+
+
+<div class="col-md-6">
+
+
+<div class="contato-box">
+
+
+<h3>
+📱 Contatos
+</h3>
+
+
+<p>
+
+WhatsApp:
+
+<br>
+
+<a href="https://wa.me/5511980676958">
+
+(11) 98067-6958
+
+</a>
+
+</p>
+
+
+
+<p>
+
+Instagram:
+
+<br>
+
+
+<a href="#">
+
+@brunatrancista_
+
+</a>
+
+
+</p>
+
+
+
+<p>
+
+Horário:
+
+<br>
+
+Segunda a sábado - 08:00 às 18:00
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="col-md-6">
+
+
+<div class="card shadow">
+
+
+<div class="card-body">
+
+
+<h3>
+📍 Localização
+</h3>
+
+
+<p>
+
+Venha conhecer nosso salão.
+
+</p>
+
+
+<iframe
+
+src="https://www.google.com/maps?q=Rua%20dos%20Corais%20158%20D%20Itapevi%20SP&output=embed"
+
+width="100%"
+
+height="300"
+
+style="border:0; border-radius:15px;"
+
+allowfullscreen=""
+
+loading="lazy">
+
+</iframe>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- INSTAGRAM -->
+
+<section class="bg-light">
+
+
+<div class="container text-center">
+
+
+<h2>
+
+Siga nosso Instagram
+
+</h2>
+
+
+<p>
+
+Veja novos trabalhos e novidades.
+
+</p>
+
+
+<a 
+
+href="#"
+
+class="btn btn-dark">
+
+Instagram
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+{% endblock %}

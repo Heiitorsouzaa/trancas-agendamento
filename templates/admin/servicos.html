@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<div class="container mt-5">
+
+
+<h1>
+💇 Serviços
+</h1>
+
+
+
+<div class="card shadow p-4 mt-4">
+
+
+<form method="POST">
+
+
+<input
+
+class="form-control mb-3"
+
+name="nome"
+
+placeholder="Nome do serviço"
+
+required>
+
+
+
+<input
+
+class="form-control mb-3"
+
+name="preco"
+
+placeholder="Preço"
+
+required>
+
+
+
+<button class="btn btn-success">
+
+Cadastrar
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+
+
+
+<div class="card shadow p-4 mt-4">
+
+
+<table class="table">
+
+
+<tr>
+
+<th>
+Serviço
+</th>
+
+<th>
+Preço
+</th>
+
+</tr>
+
+
+
+{% for s in servicos %}
+
+
+<tr>
+
+<td>
+{{s.nome}}
+</td>
+
+
+<td>
+
+R$ {{s.preco}}
+
+</td>
+
+
+</tr>
+
+
+{% endfor %}
+
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+
+{% endblock %}

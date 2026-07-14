@@ -1,0 +1,368 @@
+{% extends "base.html" %}
+
+{% block title %}
+Agendamento
+{% endblock %}
+
+
+{% block content %}
+
+
+<section>
+
+<div class="container py-5">
+
+
+<div class="titulo">
+
+<h2>
+Agende seu horário
+</h2>
+
+<p>
+Preencha os dados abaixo para reservar seu atendimento.
+</p>
+
+</div>
+
+
+
+<div class="row justify-content-center">
+
+
+<div class="col-lg-7">
+
+
+<div class="card shadow">
+
+
+<div class="card-body p-4">
+
+
+
+<form method="POST">
+
+
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Nome completo
+
+</label>
+
+
+<input
+
+type="text"
+
+name="nome"
+
+class="form-control"
+
+placeholder="Digite seu nome"
+
+required>
+
+
+</div>
+
+
+
+
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Telefone / WhatsApp
+
+</label>
+
+
+<input
+
+type="text"
+
+name="telefone"
+
+class="form-control"
+
+placeholder="(00) 00000-0000"
+
+required
+
+onkeyup="mascaraTelefone(this)">
+
+
+</div>
+
+
+
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+Escolha o serviço
+
+</label>
+
+
+
+<select
+
+name="servico"
+
+class="form-select"
+
+required>
+
+
+<option value="">
+
+Selecione
+
+</option>
+
+
+{% for servico in servicos %}
+
+
+<option value="{{ servico.nome }}">
+
+{{ servico.nome }} - R$ {{ servico.preco }}
+
+</option>
+
+
+{% endfor %}
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+<div class="row">
+
+
+
+<div class="col-md-6">
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+Data
+
+</label>
+
+
+<input
+
+type="date"
+
+name="data"
+
+class="form-control"
+
+required>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="col-md-6">
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+Horário
+
+</label>
+
+
+<select
+
+name="horario"
+
+class="form-select"
+
+required>
+
+
+<option value="">
+
+Escolha o horário
+
+</option>
+
+
+{% for hora in horarios %}
+
+
+<option value="{{ hora }}">
+
+{{ hora }}
+
+</option>
+
+
+{% endfor %}
+
+
+</select>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+        <div class="mt-4 text-center">
+
+    <button 
+        type="submit"
+        class="btn btn-success btn-lg">
+
+        ✅ Confirmar Agendamento
+
+    </button>
+
+
+    <br>
+
+
+    <a 
+    href="https://wa.me/5511980676958"
+    target="_blank"
+    class="btn btn-dark btn-lg mt-3">
+
+        📱 Falar no WhatsApp
+
+    </a>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- INFORMAÇÕES -->
+
+<section class="bg-light">
+
+
+<div class="container">
+
+
+<div class="row text-center">
+
+
+<div class="col-md-4">
+
+
+<h4>
+⏰ Horários
+</h4>
+
+
+<p>
+
+Segunda a sábado
+
+<br>
+
+08:00 às 18:00
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="col-md-4">
+
+
+<h4>
+📱 WhatsApp
+</h4>
+
+
+<p>
+
+Confirmação pelo WhatsApp após o envio.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="col-md-4">
+
+
+<h4>
+✨ Qualidade
+</h4>
+
+
+<p>
+
+Atendimento profissional e personalizado.
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+{% endblock %}

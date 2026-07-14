@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block title %}Funcionários{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2>👩🏾‍🦱 Funcionários</h2>
+
+        <a href="/admin" class="btn btn-secondary">
+            Voltar
+        </a>
+
+    </div>
+
+
+    <div class="card shadow mb-5">
+
+        <div class="card-header bg-primary text-white">
+
+            <h5 class="mb-0">
+
+                Novo Funcionário
+
+            </h5>
+
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <label class="form-label">
+
+                            Nome
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="nome"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <label class="form-label">
+
+                            Telefone
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="telefone"
+                            class="form-control">
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <label class="form-label">
+
+                            Especialidade
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="especialidade"
+                            class="form-control">
+
+                    </div>
+
+                </div>
+
+                <button class="btn btn-success mt-4">
+
+                    Cadastrar Funcionário
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="card shadow">
+
+        <div class="card-header bg-dark text-white">
+
+            Funcionários Cadastrados
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-striped table-hover">
+
+                    <thead class="table-dark">
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Nome</th>
+
+                            <th>Telefone</th>
+
+                            <th>Especialidade</th>
+
+                            <th>Ações</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for f in funcionarios %}
+
+                        <tr>
+
+                            <td>{{ f.id }}</td>
+
+                            <td>{{ f.nome }}</td>
+
+                            <td>{{ f.telefone }}</td>
+
+                            <td>{{ f.especialidade }}</td>
+
+                            <td>
+
+                                <a
+                                    href="/editar-funcionario/{{ f.id }}"
+                                    class="btn btn-warning btn-sm">
+
+                                    Editar
+
+                                </a>
+
+                                <a
+                                    href="/excluir-funcionario/{{ f.id }}"
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Excluir funcionário?')">
+
+                                    Excluir
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
