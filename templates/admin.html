@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<h2>Painel Administrativo</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+<h3>Clientes</h3>
+<p>{{ clientes }}</p>
+</div>
+
+
+<div class="card">
+<h3>Agendamentos</h3>
+<p>{{ agendamentos }}</p>
+</div>
+
+
+<div class="card">
+<h3>Serviços</h3>
+<p>{{ servicos }}</p>
+</div>
+
+
+<div class="card">
+<h3>Produtos Estoque</h3>
+<p>{{ estoque }}</p>
+</div>
+
+
+<div class="card">
+<h3>Saldo Caixa</h3>
+<p>
+R$ {{ "%.2f"|format(saldo) }}
+</p>
+</div>
+
+
+</div>
+
+
+
+<h3>Ações rápidas</h3>
+
+
+<div class="acoes">
+
+
+<a class="botao" href="{{ url_for('agendamento') }}">
+Novo Agendamento
+</a>
+
+
+<a class="botao" href="{{ url_for('clientes') }}">
+Clientes
+</a>
+
+
+<a class="botao" href="{{ url_for('servicos') }}">
+Serviços
+</a>
+
+
+<a class="botao" href="{{ url_for('estoque') }}">
+Estoque
+</a>
+
+
+<a class="botao" href="{{ url_for('caixa') }}">
+Caixa
+</a>
+
+
+<a class="botao" href="{{ url_for('logout') }}">
+Sair
+</a>
+
+
+</div>
+
+
+{% endblock %}
